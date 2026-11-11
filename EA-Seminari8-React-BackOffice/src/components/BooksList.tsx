@@ -14,6 +14,8 @@ import { ConfirmModal } from './ConfirmModal';
 import { Pagination } from './Pagination';
 import { ViewToggle } from './ViewToggle';
 
+import { FavouriteButton } from './FavouriteButton';
+
 // Libros que se ven en cada página de la tabla
 const PAGE_SIZE = 4;
 
@@ -137,6 +139,7 @@ export function BooksList() {
                       ))}
                     </td>
                     <td className="actions">
+                      <FavouriteButton book={book} />
                       {/* Aquí el id solo va en la URL; el formulario pide el libro a la API */}
                       <Link className="button secondary" to={`/books/${book._id}/edit`}>
                         Editar
@@ -188,6 +191,7 @@ export function BooksList() {
                     </div>
                   </div>
                   <div className="card-actions">
+                    <FavouriteButton book={book} />
                     <Link className="button secondary" to={`/books/${book._id}/edit`}>
                       Editar
                     </Link>
